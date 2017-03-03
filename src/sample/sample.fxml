@@ -13,17 +13,17 @@
        <RowConstraints minHeight="550.0" prefHeight="550.0" />
    </rowConstraints>
    <columnConstraints>
-      <ColumnConstraints minWidth="950.0" prefWidth="950.0" />
+      <ColumnConstraints minWidth="1050.0" prefWidth="1050.0" />
    </columnConstraints>
    <children>
-      <Canvas height="200.0" width="200.0" GridPane.rowIndex="1" />
+      <Canvas fx:id="canvas" height="200.0" width="200.0" GridPane.rowIndex="1" />
       <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <ChoiceBox id="choiceBox" fx:id="choiceBox" layoutX="15.0" layoutY="14.0" prefWidth="150.0" styleClass="select-box" stylesheets="@styles.css">
             </ChoiceBox>
-                  <Button fx:id="drawButton" layoutX="15.0" layoutY="51.0" mnemonicParsing="false" styleClass="draw-button" stylesheets="@styles.css" text="Kresli" />
+                  <Button fx:id="drawButton" onAction="#handleButtonAction" layoutX="15.0" layoutY="51.0" mnemonicParsing="false" styleClass="draw-button" stylesheets="@styles.css" text="Kresli" />
                   <ColorPicker fx:id="colorPicker" layoutX="175.0" layoutY="14.0" />
                </children>
             </AnchorPane>

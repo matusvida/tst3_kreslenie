@@ -1,5 +1,7 @@
 package Shapes;
 
+import javafx.scene.paint.Color;
+
 /**
  * Created by Matus on 02.03.2017.
  */
@@ -7,10 +9,10 @@ public abstract class Shape {
     private double rozmer;
     private double x;
     private double y;
-    private String color;
+    private Color color;
     private int z_index;
 
-    public Shape(double rozmer, double x, double y, String color, int z_index){
+    public Shape(double rozmer, double x, double y, Color color, int z_index){
         this.rozmer = rozmer;
         this.x = x;
         this.y = y;
@@ -32,7 +34,7 @@ public abstract class Shape {
         return y;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 

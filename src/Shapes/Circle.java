@@ -1,5 +1,6 @@
 package Shapes;
 
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 /**
@@ -10,12 +11,12 @@ public class Circle extends Shape{
     private double x;
     private double y;
 
-    public Circle(int rozmer, double x, double y, String color, int z_index) {
+    public Circle(double rozmer, double x, double y, Color color, int z_index) {
         super(rozmer, x, y, color, z_index);
     }
 
     @Override
     public void draw() {
-        circle = new javafx.scene.shape.Circle(x, y, getRozmer(), Paint.valueOf(getColor()));
+        circle = new javafx.scene.shape.Circle(x, y, getRozmer(), getColor());
     }
 }
