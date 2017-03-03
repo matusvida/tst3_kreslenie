@@ -7,39 +7,44 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.layout.*?>
 
-<GridPane id="size_label" alignment="center" gridLinesVisible="true" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane id="size_label" alignment="center" gridLinesVisible="false" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <rowConstraints>
       <RowConstraints minHeight="100.0" prefHeight="100.0" />
        <RowConstraints minHeight="550.0" prefHeight="550.0" />
    </rowConstraints>
    <columnConstraints>
-      <ColumnConstraints minWidth="1050.0" prefWidth="1050.0" />
+      <ColumnConstraints minWidth="1150.0" prefWidth="1150.0" />
    </columnConstraints>
    <children>
       <Canvas fx:id="canvas" height="200.0" width="200.0" GridPane.rowIndex="1" />
-      <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="1050.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="98.0" prefWidth="400.0">
                <children>
                   <ChoiceBox id="choiceBox" fx:id="choiceBox" layoutX="15.0" layoutY="14.0" prefWidth="150.0" styleClass="select-box" stylesheets="@styles.css">
             </ChoiceBox>
-                  <Button fx:id="drawButton" onAction="#handleButtonAction" layoutX="15.0" layoutY="51.0" mnemonicParsing="false" styleClass="draw-button" stylesheets="@styles.css" text="Kresli" />
-                  <ColorPicker fx:id="colorPicker" layoutX="175.0" layoutY="14.0" />
+                  <Button fx:id="drawButton" layoutX="15.0" layoutY="57.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="38.0" prefWidth="150.0" styleClass="draw-button" stylesheets="@styles.css" text="Kresli" />
+                  <ColorPicker fx:id="colorPicker" layoutX="205.0" layoutY="14.0" />
+                  <Label layoutX="208.0" layoutY="49.0" text="x:" />
+                  <Label layoutX="208.0" layoutY="76.0" text="y:" />
+                  <TextField layoutX="227.0" layoutY="45.0" prefHeight="25.0" prefWidth="59.0" fx:id="xValue" />
+                  <TextField fx:id="yValue" layoutX="227.0" layoutY="72.0" prefHeight="25.0" prefWidth="59.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Label layoutX="32.0" layoutY="14.0" text="Vyber rozmer">
+                  <Label layoutX="67.0" layoutY="14.0" text="Vyber rozmer">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Slider fx:id="slider" id="slider" blockIncrement="1.0" layoutX="32.0" layoutY="49.0" majorTickUnit="2.0" minorTickCount="1" snapToTicks="true" stylesheets="@styles.css" />
-                  <Label fx:id="sizeLabel" layoutX="328.0" layoutY="74.0" text="0">
+                  <Slider id="slider" fx:id="slider" blockIncrement="1.0" layoutX="67.0" layoutY="49.0" majorTickUnit="2.0" minorTickCount="1" snapToTicks="true" stylesheets="@styles.css" />
+                  <Label fx:id="sizeLabel" layoutX="363.0" layoutY="74.0" text="0">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
+                  <Label fx:id="errorLabel" layoutX="14.0" layoutY="66.0" />
                </children>
             </AnchorPane>
         </items>

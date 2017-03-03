@@ -29,7 +29,7 @@ public class Controller implements Initializable{
     private Slider slider;
 
     @FXML
-    private Label sizeLabel;
+    private Label sizeLabel, errorLabel;
 
     @FXML
     private Button drawButton;
@@ -39,6 +39,9 @@ public class Controller implements Initializable{
 
     @FXML
     private ColorPicker colorPicker;
+
+    @FXML
+    private TextField xValue, yValue;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -70,19 +73,33 @@ public class Controller implements Initializable{
     private void handleButtonAction(){
         double size = Double.valueOf(sizeLabel.getText());
         Color paint = colorPicker.getValue();
-
-        switch (choiceBox.getValue().toString()){
-            case Constants.CIRCLE: {
-                Circle circle = new Circle(size, 5, 5, paint, 5);
-            } break;
-
-            case Constants.RECTANGLE:{
-                Rectangle rectangle = new Rectangle(size, 5, 5, paint, 5);
-            } break;
-
-            case Constants.TRIANGLE:{
-                Triangle triangle = new Triangle(size, 5, 5, paint, 5);
-            } break;
+        if(xValue.getText().equals(null) || yValue.getText().equals(null)){
+            errorLabel.setText("nastavte suradnice");
+        } else {
+            double x = Double.valueOf(xValue.getText());
+            double y = Double.valueOf(yValue.getText());
+            getChoice(size, x, y, paint);
         }
+    }
+
+    private void getChoice(double size, double x, double y, Color paint){
+        switch (choiceBox.getValue().toString()) {
+            case Constants.CIRCLE: {
+                Shape circle = new Circle(size, x, y, paint, 5);
+                circle.draw(canvas);
+            }
+            break;
+
+            case Constants.RECTANGLE: {
+                Rectangle rectangle = new Rectangle(size, 5, 5, paint, 5);
+            }
+            break;
+
+            case Constants.TRIANGLE: {
+                Triangle triangle = new Triangle(size, 5, 5, paint, 5);
+            }
+            break;
+        }
+
     }
 }

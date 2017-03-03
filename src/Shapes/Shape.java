@@ -1,5 +1,7 @@
 package Shapes;
 
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 /**
@@ -20,7 +22,7 @@ public abstract class Shape {
         this.z_index = z_index;
     }
 
-    public abstract void draw();
+    public abstract void draw(Canvas canvas);
 
     public double getRozmer() {
         return rozmer;

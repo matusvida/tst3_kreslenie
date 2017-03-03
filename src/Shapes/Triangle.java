@@ -1,5 +1,6 @@
 package Shapes;
 
+import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
 
 /**
@@ -11,7 +12,7 @@ public class Triangle extends Shape {
     }
 
     @Override
-    public void draw() {
+    public void draw(Canvas canvas) {
 
     }
 
